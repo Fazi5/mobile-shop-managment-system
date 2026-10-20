@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inventory Management Dashboard (Next.js)
 
-## Getting Started
+A web dashboard for managing shop inventory: stock items, suppliers, usage and reports. It's a front-end prototype that runs on in-memory sample data managed through React Context.
 
-First, run the development server:
+## Features
+
+- **Dashboard:** summary cards and a recent-activity feed
+- **Inventory table:** sorting and filtering (TanStack Table), add and edit forms with validation, and quick stock deduction
+- **Suppliers:** list and add suppliers
+- **Reports and settings pages**
+- **Responsive layout:** sidebar on desktop, slide-out navigation on mobile
+
+## Tech stack
+
+Next.js (App Router) · React · TypeScript · Tailwind CSS · shadcn/ui · TanStack Table · React Hook Form · Zod · date-fns · lucide-react
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/app/          pages: dashboard, inventory, suppliers, reports, settings
+src/components/   dashboard cards, inventory table and forms, navigation, ui primitives
+src/context/      in-memory store (React Context)
+src/types/        TypeScript types for items, suppliers, orders and usage logs
+```
 
-## Learn More
+## Next steps
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Connect to a real backend and database so data persists between sessions
